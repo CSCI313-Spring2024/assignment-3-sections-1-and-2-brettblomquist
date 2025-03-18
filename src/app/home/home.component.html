@@ -1,0 +1,27 @@
+<section>
+  <form>
+    <input
+      class="form-control min d-inline-block m-3"
+      type="text"
+      placeholder="Filter by city"
+      aria-label="Filter by city"
+      style="width: 30%"
+      #filter
+    />
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="filterResults(filter.value)"
+    >
+      Search
+    </button>
+  </form>
+</section>
+
+<section class="results">
+  @for (housingLocation of filteredLocationList; track housingLocation){
+  <app-housing-location
+    [housingLocation]="housingLocation"
+  ></app-housing-location>
+  }
+</section>
